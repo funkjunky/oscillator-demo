@@ -1,7 +1,10 @@
 TODO
 ---
 
-# Clickable Keyboard
-  - try 20 hertz increments
-# Slider and input, for frequency scale
+# able to slide down keyboard with cursor
+ - set a 'mousedown' state on App and pass it down to <Key />
+ - use mouseEnter and mouseLeave, and check for mouseDown on whether to start tone or stop tone [? is there an edge case where I should not check onmouseLeave]
+
 # Assign keys to Keyboard
+
+# Slider and input, for frequency scale

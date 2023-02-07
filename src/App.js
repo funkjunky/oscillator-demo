@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import Key from './Key'
+import { getOscillator } from './oscillator'
+
 import './App.css';
+
+const oscillators = [1,2,3,4,5,6,7,8].map(v => getOscillator(440 + 20 * v))
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Playing With The Oscillator</h1>
+      <div className="keyboard">
+        {oscillators.map((oscillator, i) => (
+          <Key oscillator={oscillator} key={i} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 let audioCtx;
 
 const getAudioCtx = () => {
@@ -18,18 +16,17 @@ export const createOscillator = (hertz, type='square') => {
   return oscillator
 }
 
-export const useOscillator = hertz => {
-  const [oscillator, setOscillator] = useState(null);
+export const getOscillator = hertz => {
+  let oscillator = null;
 
   return {
     start: () => {
-      const _o = createOscillator(hertz);
-      _o.start();
-      setOscillator(_o);
+      oscillator = createOscillator(hertz);
+      oscillator.start();
     },
     stop: () => {
       oscillator?.stop();
-      setOscillator(null);
+      oscillator = null;
     },
     ended: () => oscillator === null,
   }
