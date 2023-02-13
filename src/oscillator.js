@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 let audioCtx;
 
 const getAudioCtx = () => {
@@ -17,7 +19,7 @@ export const createOscillator = (hertz, type='square') => {
 }
 
 export const getOscillator = hertz => {
-  let oscillator = null;
+  let oscillator = false;
 
   return {
     start: () => {
@@ -26,8 +28,17 @@ export const getOscillator = hertz => {
     },
     stop: () => {
       oscillator?.stop();
-      oscillator = null;
+      oscillator = false;
     },
-    ended: () => oscillator === null,
+    ended: () => oscillator === false,
+    oscillator,
   }
+}
+
+export const useOscillators = () => {
+  const [oscillators, setOscillators] = useState(null);
+
+  useEffect(() => setOscillators([1,2,3,4,5,6,7,8].map(v => getOscillator(440 + 30 * v))), [setOscillators])
+
+  return oscillators;
 }

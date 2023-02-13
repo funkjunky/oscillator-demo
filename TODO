@@ -7,4 +7,10 @@ TODO
 
 # Assign keys to Keyboard
 
+ - call the Synth component "Keyboard"
+
+ - new component 'Synth' for sliders and type
 # Slider and input, for frequency scale
+
+ - new component for 'Appreggiator' w addTo, and reset, and all a tempo slider
+# Add an "appreggiator" section for the new component
