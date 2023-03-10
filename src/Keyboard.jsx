@@ -2,9 +2,9 @@ import { useState } from 'react';
 import Key from './Key';
 import { useOscillators } from './oscillator';
 
-import './Synth.css';
+import './Keyboard.css';
 
-const Synth = () => {
+const Keyboard = () => {
   const oscillators = useOscillators()
   const [isMouseDown, setIsMouseDown] = useState(false)
   return (
@@ -21,4 +21,4 @@ const Synth = () => {
   );
 }
 
-export default Synth
+export default Keyboard

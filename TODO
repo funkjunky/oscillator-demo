@@ -1,16 +1,17 @@
 TODO
 ---
 
-# able to slide down keyboard with cursor
- - set a 'mousedown' state on App and pass it down to <Key />
- - use mouseEnter and mouseLeave, and check for mouseDown on whether to start tone or stop tone [? is there an edge case where I should not check onmouseLeave]
-
 # Assign keys to Keyboard
-
- - call the Synth component "Keyboard"
+ - use redux to capture keyboard keys
+ - change the frequencies to the actual keys on a piano
 
  - new component 'Synth' for sliders and type
 # Slider and input, for frequency scale
 
  - new component for 'Appreggiator' w addTo, and reset, and all a tempo slider
 # Add an "appreggiator" section for the new component
+
+
+##DONE##
+
+# able to slide down keyboard with cursor
