@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 let audioCtx;
 
+export const notes = ['A3', 'B3', 'C3', 'D3', 'E3', 'F3', 'G3', 'A4', 'B4', 'C4', 'D4'];
+
 const getAudioCtx = () => {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 

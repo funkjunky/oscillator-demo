@@ -1,19 +1,13 @@
-import { useEffect, useState } from 'react'
+import { connect } from 'react-redux';
 
-const Key = ({ oscillator, isMouseDown }) => {
-  //messy next two lines... TODO clean up (im not sure how yet)
-  const [oscIsSet, setOscIsSet] = useState(oscillator.oscillator);
-  useEffect(() => setOscIsSet(!!oscillator.oscillator), [oscillator.oscillator])
+import { press, release } from './reducers/key';
 
-  return (
-    <div
-      style={{ width: 50, height: 100, backgroundColor: !oscIsSet ? 'white' : 'grey', border: 'solid 1px black' }}
-      onMouseEnter={() => isMouseDown && oscillator.start()}
-      onMouseLeave={() => isMouseDown && oscillator.stop()}
-      onMouseDown={() => oscillator.start()}
-      onMouseUp={() => oscillator.stop()}
-    />
-  );
-}
+const Key = ({ key, note, press, release }) => (
+  <div
+    style={{ width: 50, height: 100, backgroundColor: !key?.[note] ? 'white' : 'grey', border: 'solid 1px black' }}
+    onMouseDown={() => press(note)}
+    onMouseUp={() => release(note)}
+  />
+);
 
-export default Key;
+export default connect(({ key }) => ({ key }), {press, release})(Key);

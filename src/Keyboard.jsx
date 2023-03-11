@@ -1,22 +1,14 @@
-import { useState } from 'react';
 import Key from './Key';
-import { useOscillators } from './oscillator';
+import { notes } from './oscillator';
 
 import './Keyboard.css';
 
 const Keyboard = () => {
-  const oscillators = useOscillators()
-  const [isMouseDown, setIsMouseDown] = useState(false)
   return (
-    <div
-      className="keyboard"
-      onMouseDown={() => setIsMouseDown(true)}
-      onMouseUp={() => setIsMouseDown(false)}
-      onMouseLeave={() => setIsMouseDown(false)}
-    >
-      {oscillators?.map((oscillator, key) => (
-        <Key {...{ oscillator, isMouseDown, key }} />
-      ))}
+    <div className="keyboard">
+      { notes.map(note => (
+        <Key note={note} key={note} />
+      )) }
     </div>
   );
 }

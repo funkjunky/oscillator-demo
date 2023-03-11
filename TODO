@@ -1,17 +1,31 @@
 TODO
 ---
 
-# Assign keys to Keyboard
- - use redux to capture keyboard keys
- - change the frequencies to the actual keys on a piano
+ - connect UI components to redux, and get graphics showing based on key strokes
 
  - new component 'Synth' for sliders and type
 # Slider and input, for frequency scale
+ - drop down for oscillator type "type: [v]"
+ - implement type using redux and 'type' under parameters
+ - adjust oscillator based on type
+ - Add scale radio buttons, default 3 'scale' under parameters
+ - adjust oscillator for scale, adjust last character by 'n+-', so 0 is 'n-3' and 7 is 'n+4'
+ - add slider for pitch yaw, +- 100 frequency, default 0, 'freqOffset'
 
  - new component for 'Appreggiator' w addTo, and reset, and all a tempo slider
-# Add an "appreggiator" section for the new component
+# Add an "sequencer" section for the new component
+ - checkbox "use sequencer" with fieldset that shows options:
+ - button: 'reset', tempo slider with input showing tempo [default 120]
+ - on key up, add a key to the "sequence"
 
+# Add multiple keyboards
+ - 3 keyboards, numbered 1-3, selectable through those keys
+
+ - how to play more than 2 notes at the same time??? properly using the API More research
+
+# What's next???? perhaps recording notes, scale and timing, recording key strokes and time? Showing on a notes sheet and a line tracking time?
 
 ##DONE##
 
+# Assign keys to Keyboard
 # able to slide down keyboard with cursor
