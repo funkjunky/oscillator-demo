@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import key, { press, release } from './reducers/key';
+import notePressed, { press, release } from './reducers/notePressed';
 import Keyboard from './Keyboard';
 import handleSoundsMiddleware from './handleSoundsMiddleware';
 import { notes } from './oscillator'
@@ -9,7 +9,7 @@ import { notes } from './oscillator'
 import './App.css';
 
 const store = configureStore({
-  reducer: { key },
+  reducer: { notePressed },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(handleSoundsMiddleware),
 });
 
@@ -18,7 +18,7 @@ let keyToLetter = {};
 keys.forEach((key, i) => keyToLetter[key] = notes[i]);
 
 function App() {
-  const dispatch = action => ({ key }) => store.dispatch(action(keyToLetter[key]));
+  const dispatch = action => ({ key }) => keys.indexOf(key) !== -1 && store.dispatch(action(keyToLetter[key]));
 
   return (
     <Provider store={store}>

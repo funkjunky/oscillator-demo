@@ -1,13 +1,9 @@
-import { connect } from 'react-redux';
-
-import { press, release } from './reducers/key';
-
-const Key = ({ key, note, press, release }) => (
+const Key = ({ pressed, press, release }) => (
   <div
-    style={{ width: 50, height: 100, backgroundColor: !key?.[note] ? 'white' : 'grey', border: 'solid 1px black' }}
-    onMouseDown={() => press(note)}
-    onMouseUp={() => release(note)}
+    style={{ width: 50, height: 100, backgroundColor: pressed ? 'grey' : 'white', border: 'solid 1px black' }}
+    onMouseDown={press}
+    onMouseUp={release}
   />
 );
 
-export default connect(({ key }) => ({ key }), {press, release})(Key);
+export default Key;
