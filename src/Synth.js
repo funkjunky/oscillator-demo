@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 
 import Keyboard from './Keyboard';
-import { types, setType } from './reducers/synth';
+import { types, octaves, setType, setOctave } from './reducers/synth';
 
-const Synth = ({ synth, setType }) => {
+const Synth = ({ synth, setType, setOctave }) => {
   return (
     <fieldset>
       <legend>Synth</legend>
@@ -15,10 +15,13 @@ const Synth = ({ synth, setType }) => {
             )) }
           </select>
         </span>
+        <span>Octave:
+          <input type="range" min={octaves.min} max={octaves.max} value={synth?.octave} onChange={({ target }) => setOctave(+target.value)} />
+        </span>
       </div>
       <Keyboard />
     </fieldset>
   );
 };
 
-export default connect(({ synth }) => ({ synth }), {setType })(Synth);
+export default connect(({ synth }) => ({ synth }), { setType, setOctave })(Synth);

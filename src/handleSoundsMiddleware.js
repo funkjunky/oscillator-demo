@@ -7,8 +7,10 @@ const handleSoundsMiddleware = store => {
   const notesPlaying = {};
   return next => ({ type, payload: note }) => {
     if (type === press.type && !notesPlaying[note]) {
-      console.log('note, freq: ', note, noteToFrequency(note), store.getState())
-      notesPlaying[note] = createOscillator(noteToFrequency(note), store.getState().synth.type);
+      const { type, octave } = store.getState().synth;
+      const octavedNote = note[0] + (+note[1] + octave - 3)
+      console.log('note info: ', note, octavedNote, noteToFrequency(octavedNote), store.getState().synth)
+      notesPlaying[note] = createOscillator(noteToFrequency(octavedNote), type);
       notesPlaying[note].start();
     } else if (type === release.type) {
       notesPlaying[note].stop();

@@ -1,10 +1,7 @@
 TODO
 ---
 
-# Slider and input, for frequency scale
- - drop down for oscillator type "type: [v]"
- - implement type using redux and 'type' under parameters
- - adjust oscillator based on type
+# Slider and input, for frequency octave
  - Add scale radio buttons, default 3 'scale' under parameters
  - adjust oscillator for scale, adjust last character by 'n+-', so 0 is 'n-3' and 7 is 'n+4'
  - add slider for pitch yaw, +- 100 frequency, default 0, 'freqOffset'
