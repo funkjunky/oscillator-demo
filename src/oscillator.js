@@ -10,7 +10,7 @@ const getAudioCtx = () => {
   return audioCtx;
 }
 
-export const createOscillator = (hertz, type='square') => {
+export const createOscillator = (hertz, type='sawtooth') => {
   const oscillator = getAudioCtx().createOscillator();
 
   oscillator.type = type;

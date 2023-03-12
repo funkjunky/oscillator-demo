@@ -1,9 +1,6 @@
 TODO
 ---
 
- - connect UI components to redux, and get graphics showing based on key strokes
-
- - new component 'Synth' for sliders and type
 # Slider and input, for frequency scale
  - drop down for oscillator type "type: [v]"
  - implement type using redux and 'type' under parameters

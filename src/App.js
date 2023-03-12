@@ -2,14 +2,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
 import notePressed, { press, release } from './reducers/notePressed';
-import Keyboard from './Keyboard';
+import synth from './reducers/synth';
+import Synth from './Synth';
 import handleSoundsMiddleware from './handleSoundsMiddleware';
 import { notes } from './oscillator'
 
 import './App.css';
 
 const store = configureStore({
-  reducer: { notePressed },
+  reducer: { notePressed, synth },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(handleSoundsMiddleware),
 });
 
@@ -24,7 +25,7 @@ function App() {
     <Provider store={store}>
       <div className="App" tabIndex={-1} onKeyDown={dispatch(press)} onKeyUp={dispatch(release)} autoFocus>
         <h1>Playing With The Oscillator</h1>
-        <Keyboard />
+        <Synth />
       </div>
     </Provider>
   );
