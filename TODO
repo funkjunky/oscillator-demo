@@ -1,16 +1,41 @@
 TODO
 ---
 
+# Add attack and release slider, like in sweep tutorial
+ - maybe make a line graph that visualizes the attack an release, if so I could remove the sliders! and just label it 'envelope'
+
+# Change the offset to "wobble"
+ - At 0 there is no change. at +1, or -1, sweep from [+1 to note, or -1 to note, at an interval, perhaps a up and down slider for the duration of the slider... if not do a sweep every half a second?
+ - visualize w canvas.
+
+~ perhaps have a life visualization where we show the value with a blue dash , same with attack release. I would need to get the "current value" from the node, somehow.
+
+ - clean up middleware
+
 # Slider and input, for frequency octave
- - Add scale radio buttons, default 3 'scale' under parameters
- - adjust oscillator for scale, adjust last character by 'n+-', so 0 is 'n-3' and 7 is 'n+4'
- - add slider for pitch yaw, +- 100 frequency, default 0, 'freqOffset'
+ - add a 'detuneDirection' member to synth, 'inc', 'dec' and 'null'
+
+ - add a setInterval in the middleware for applying things to nodes.
+ - add code in setInterval that brings 'detune' back to 0 if 'null', other inc or dec. All based on dt. delta time.
+ - then apply detune to all oscillators
+
+ - add key input for ',' and '.' for bend
+ - add a UI '>###>' on each side that represents what bend value is going.
+##
+
+# Add keyboard shortcuts for all controls
+ - cycle through 'type': 'q' [move through an array of all types]
+ - type onChange: call 'setPeriodicWave' on all set nodes.
+ - octave up 'e', octave down 'w'
+ - offset up '=', offset down '-'
+
 
  - new component for 'Appreggiator' w addTo, and reset, and all a tempo slider
 # Add an "sequencer" section for the new component
  - checkbox "use sequencer" with fieldset that shows options:
  - button: 'reset', tempo slider with input showing tempo [default 120]
  - on key up, add a key to the "sequence"
+##
 
 # Add multiple keyboards
  - 3 keyboards, numbered 1-3, selectable through those keys

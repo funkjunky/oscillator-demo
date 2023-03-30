@@ -4,18 +4,19 @@ let audioCtx;
 
 export const notes = ['C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3', 'C4', 'D4', 'E4', 'F4'];
 
-const getAudioCtx = () => {
+export const getAudioCtx = () => {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   return audioCtx;
 }
+
+export const createGainNode = () => new GainNode(audioCtx);
 
 export const createOscillator = (hertz, type='sawtooth') => {
   const oscillator = getAudioCtx().createOscillator();
 
   oscillator.type = type;
   oscillator.frequency.setValueAtTime(hertz, getAudioCtx().currentTime); // value in hertz
-  oscillator.connect(getAudioCtx().destination);
 
   return oscillator
 }
