@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Keyboard from './Keyboard';
 import Envelope from './Envelope';
-import { types, octaves, offset, setType, setOctave, setOffset, setAttack, setRelease } from './reducers/synth';
+import { types, octaves, offset, setType, setOctave, setOffset, setAttack, setRelease } from '../reducers/synth';
 
 const Synth = ({ synth, setType, setOctave, setOffset, setAttack, setRelease }) => {
   return (

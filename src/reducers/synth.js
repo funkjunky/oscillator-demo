@@ -6,8 +6,8 @@ const synth = createSlice({
     type: 'sawtooth',
     octave: 3,
     offset: 0,
-    attack: 0,
-    release: 80,
+    attack: 10,
+    release: 70,
   },
   reducers: {
     setType: (state, { payload }) => void (state.type = payload),

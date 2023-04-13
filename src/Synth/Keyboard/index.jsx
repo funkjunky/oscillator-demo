@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 import Key from './Key';
-import { notes } from './oscillator';
-import { press, release } from './reducers/notePressed';
+import { notes } from '../../oscillator';
+import { press, release } from '../../reducers/notePressed';
 
-import './Keyboard.css';
+import './index.css';
 
 const Keyboard = ({ notePressed, press, release }) => (
   <fieldset className="keyboard">
