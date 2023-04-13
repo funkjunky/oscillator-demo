@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/oscillator-demo/static/css/main.0bceff64.css",
+    "main.js": "/oscillator-demo/static/js/main.7044759e.js",
+    "static/js/787.0bfd2c7a.chunk.js": "/oscillator-demo/static/js/787.0bfd2c7a.chunk.js",
+    "index.html": "/oscillator-demo/index.html",
+    "main.0bceff64.css.map": "/oscillator-demo/static/css/main.0bceff64.css.map",
+    "main.7044759e.js.map": "/oscillator-demo/static/js/main.7044759e.js.map",
+    "787.0bfd2c7a.chunk.js.map": "/oscillator-demo/static/js/787.0bfd2c7a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0bceff64.css",
+    "static/js/main.7044759e.js"
+  ]
+}
