@@ -24,7 +24,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App" tabIndex={-1} onKeyDown={dispatch(press)} onKeyUp={dispatch(release)} autoFocus>
-        <h1>Playing With The Oscillator</h1>
+        <h1>Playing With The Web Audio API</h1>
         <Synth />
       </div>
     </Provider>
