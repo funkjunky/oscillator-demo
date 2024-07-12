@@ -13,7 +13,8 @@ export const useObject = (initialObject = {}) => {
 
 export const getCursorPosInCanvas = (e, ref) => {
   const { left, top } = ref.current.getBoundingClientRect();
-  return { x: e.clientX - left, y: e.clientY - top };
+  const { clientX, clientY } = e.touches?.[0] ?? e;
+  return { x: clientX - left, y: clientY - top };
 };
 
 export const isCursorWithinDistanceOfPoint = (cursor, { x, y }, clickableDistanceFromPoint) => (

@@ -17,7 +17,7 @@ const Envelope = ({ synth, setAttack, setRelease }) => {
     release: { x: () => (160 + synth.release), set: { x: x => setRelease(x - 160) } },
   };
 
-  const { isCursorHoveringOver, isGrabbing, ...dragProps } = useDrag({ ref, grabPoints, persistentY: 20 });
+  const { isGrabbing, ...dragProps } = useDrag({ ref, grabPoints, persistentY: 20 });
 
   useEffect(() => {
     const ctx = ref.current.getContext('2d');
@@ -38,8 +38,8 @@ const Envelope = ({ synth, setAttack, setRelease }) => {
     drawCircle(ctx, attackX, 20, 2, true);
     drawCircle(ctx, releaseX, 20, 2, true);
 
-    if (isCursorHoveringOver.attack)  drawCircle(ctx, attackX, 20, 5);
-    if (isCursorHoveringOver.release) drawCircle(ctx, releaseX, 20, 5);
+    //if (isCursorHoveringOver.attack)  drawCircle(ctx, attackX, 20, 5);
+    //if (isCursorHoveringOver.release) drawCircle(ctx, releaseX, 20, 5);
 
     ctx.strokeStyle = 'gray';
     if (isGrabbing.attack) {

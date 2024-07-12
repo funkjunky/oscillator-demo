@@ -1,8 +1,8 @@
 const Key = ({ pressed, press, release }) => (
   <div
-    style={{ width: 50, height: 100, backgroundColor: pressed ? 'grey' : 'white', border: 'solid 1px black' }}
-    onMouseDown={press}
-    onMouseUp={release}
+    style={{ width: 100, height: 200, backgroundColor: pressed ? 'grey' : 'white', border: 'solid 1px black' }}
+    onTouchStart={press}
+    onTouchEnd={release}
   />
 );
 

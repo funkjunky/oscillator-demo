@@ -1,9 +1,6 @@
 TODO
 ---
 
-# Add attack and release slider, like in sweep tutorial
- - maybe make a line graph that visualizes the attack an release, if so I could remove the sliders! and just label it 'envelope'
-
 # Change the offset to "wobble"
  - At 0 there is no change. at +1, or -1, sweep from [+1 to note, or -1 to note, at an interval, perhaps a up and down slider for the duration of the slider... if not do a sweep every half a second?
  - visualize w canvas.
@@ -48,3 +45,4 @@ TODO
 
 # Assign keys to Keyboard
 # able to slide down keyboard with cursor
+# Add attack and release slider, like in sweep tutorial
